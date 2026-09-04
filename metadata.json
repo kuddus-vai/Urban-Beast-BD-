@@ -1,0 +1,6 @@
+{
+  "name": "Urban Beast BD",
+  "description": "Urban Beast BD — Premium Streetwear, Official Club Jerseys, and Boxy Drops in Bangladesh with bKash, Nagad, and Rocket payment.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
