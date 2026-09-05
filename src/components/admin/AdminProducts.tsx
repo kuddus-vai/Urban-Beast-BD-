@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useShop } from '../../context/ShopContext';
+import { getImageUrl } from '../../utils/image';
 import { Product, ProductCategory, Size } from '../../types';
 import { 
   Package, 
@@ -455,7 +456,7 @@ export const AdminProducts: React.FC = () => {
                       <td className="py-3 px-4">
                         <div className="flex items-center gap-3">
                           <img
-                            src={product.image}
+                            src={getImageUrl(product.image)}
                             alt=""
                             className="w-12 h-14 object-cover rounded-xl bg-zinc-900 border border-zinc-800 shrink-0 cursor-pointer hover:opacity-80 transition-opacity"
                             onClick={() => setQuickViewProduct(product)}
@@ -744,7 +745,7 @@ export const AdminProducts: React.FC = () => {
                     className="flex-1 bg-[#1b1b22] border border-zinc-700 rounded-xl px-3 py-2 text-white font-mono text-[11px]"
                   />
                   <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-700 overflow-hidden shrink-0">
-                    <img src={formData.image} alt="Preview" className="w-full h-full object-cover" />
+                    <img src={getImageUrl(formData.image)} alt="Preview" className="w-full h-full object-cover" />
                   </div>
                 </div>
 

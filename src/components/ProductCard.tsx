@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Product, Size } from '../types';
 import { useShop } from '../context/ShopContext';
 import { Heart, ShoppingBag, Eye, Star, Sparkles } from 'lucide-react';
+import { getImageUrl } from '../utils/image';
 
 interface ProductCardProps {
   product: Product;
@@ -43,7 +44,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       {/* Top Image Container */}
       <div className="relative w-full aspect-[4/5] bg-zinc-900 overflow-hidden cursor-pointer" onClick={() => setQuickViewProduct(product)}>
         <img
-          src={isHovered && product.images[1] ? product.images[1] : product.image}
+          src={getImageUrl(isHovered && product.images[1] ? product.images[1] : product.image)}
           alt={displayName}
           className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
           loading="lazy"

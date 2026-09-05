@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useShop } from '../context/ShopContext';
 import { bannerSlides } from '../data/banners';
+import { getImageUrl } from '../utils/image';
 import { 
   Flame, 
   ShieldCheck, 
@@ -121,7 +122,7 @@ export const HeroSection: React.FC = () => {
                 }`}
               >
                 <img
-                  src={slide.image}
+                  src={getImageUrl(slide.image)}
                   alt={language === 'bn' ? slide.titleBn : slide.title}
                   className={`w-full h-full object-cover object-center transition-transform duration-7000 ease-out ${
                     isActive ? 'scale-105' : 'scale-100'
@@ -240,7 +241,7 @@ export const HeroSection: React.FC = () => {
               >
                 <div className="w-12 h-12 rounded-xl overflow-hidden bg-zinc-900 shrink-0 border border-zinc-700/60">
                   <img
-                    src={cat.image}
+                    src={getImageUrl(cat.image)}
                     alt={cat.name}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />

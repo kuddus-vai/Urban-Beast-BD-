@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useShop } from '../context/ShopContext';
+import { getImageUrl } from '../utils/image';
 import { X, Trash2, ShoppingBag, ArrowRight, Tag, Sparkles, Check } from 'lucide-react';
 
 export const CartDrawer: React.FC = () => {
@@ -107,7 +108,7 @@ export const CartDrawer: React.FC = () => {
                     {/* Item Image */}
                     <div className="w-20 h-24 rounded-xl overflow-hidden bg-zinc-900 border border-zinc-800 shrink-0">
                       <img
-                        src={item.product.image}
+                        src={getImageUrl(item.product.image)}
                         alt={displayName}
                         className="w-full h-full object-cover"
                       />

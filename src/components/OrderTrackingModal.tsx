@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useShop } from '../context/ShopContext';
+import { getImageUrl } from '../utils/image';
 import { X, Search, Truck, CheckCircle2, Clock, MapPin, Package, AlertCircle } from 'lucide-react';
 import { Order } from '../types';
 
@@ -234,7 +235,7 @@ export const OrderTrackingModal: React.FC = () => {
                 {currentOrder.items.map((item, idx) => (
                   <div key={idx} className="py-2 first:pt-0 last:pb-0 flex items-center justify-between gap-3 text-xs">
                     <div className="flex items-center gap-2.5">
-                      <img src={item.product.image} alt="" className="w-10 h-10 object-cover rounded-lg border border-zinc-800" />
+                      <img src={getImageUrl(item.product.image)} alt="" className="w-10 h-10 object-cover rounded-lg border border-zinc-800" />
                       <div>
                         <p className="font-semibold text-white line-clamp-1">{item.product.name}</p>
                         <p className="text-zinc-500 text-[10px]">Size: {item.selectedSize} · Qty: {item.quantity}</p>

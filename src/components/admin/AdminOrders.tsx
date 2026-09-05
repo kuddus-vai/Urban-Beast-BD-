@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useShop } from '../../context/ShopContext';
+import { getImageUrl } from '../../utils/image';
 import { Order, OrderStatus, Size, CustomerInfo } from '../../types';
 import { 
   Truck, 
@@ -518,7 +519,7 @@ export const AdminOrders: React.FC = () => {
                       <div key={i} className="pt-2 first:pt-0 flex items-center justify-between gap-3">
                         <div className="flex items-center gap-2.5">
                           <img
-                            src={item.product?.image}
+                            src={getImageUrl(item.product?.image)}
                             alt=""
                             className="w-10 h-12 object-cover rounded-lg bg-zinc-900 border border-zinc-800"
                           />

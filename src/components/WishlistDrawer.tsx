@@ -1,5 +1,6 @@
 import React from 'react';
 import { useShop } from '../context/ShopContext';
+import { getImageUrl } from '../utils/image';
 import { X, Heart, ShoppingBag, Trash2, ArrowRight } from 'lucide-react';
 
 export const WishlistDrawer: React.FC = () => {
@@ -72,7 +73,7 @@ export const WishlistDrawer: React.FC = () => {
                   <div key={product.id} className="pt-4 first:pt-0 flex gap-3.5">
                     <div className="w-20 h-24 rounded-xl overflow-hidden bg-zinc-900 border border-zinc-800 shrink-0">
                       <img
-                        src={product.image}
+                        src={getImageUrl(product.image)}
                         alt={displayName}
                         className="w-full h-full object-cover"
                       />

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useShop } from '../context/ShopContext';
 import { Review, CustomerProof } from '../types';
 import { customerProofs } from '../data/customerProofs';
+import { getImageUrl } from '../utils/image';
 import { 
   Star, 
   CheckCircle2, 
@@ -245,7 +246,7 @@ export const ReviewsAndSocial: React.FC = () => {
               className="group relative rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 hover:border-[#ff462e] aspect-[4/5] cursor-pointer transition-all duration-300 shadow-md hover:shadow-red-950/30 hover:-translate-y-1"
             >
               <img
-                src={proof.image}
+                src={getImageUrl(proof.image)}
                 alt={proof.caption}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 loading="lazy"
@@ -311,7 +312,7 @@ export const ReviewsAndSocial: React.FC = () => {
             {/* Lightbox Main Image */}
             <div className="md:w-3/5 bg-black flex items-center justify-center relative min-h-[300px] sm:min-h-[450px]">
               <img
-                src={activeProof.image}
+                src={getImageUrl(activeProof.image)}
                 alt={activeProof.caption}
                 className="max-h-[80vh] w-auto max-w-full object-contain"
               />
@@ -522,7 +523,7 @@ export const ReviewsAndSocial: React.FC = () => {
                 {rev.image && (
                   <div className="w-full h-40 rounded-2xl overflow-hidden mb-4 bg-zinc-900 border border-zinc-800">
                     <img
-                      src={rev.image}
+                      src={getImageUrl(rev.image)}
                       alt={rev.author}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                     />

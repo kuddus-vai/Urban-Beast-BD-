@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useShop } from '../context/ShopContext';
+import { getImageUrl } from '../utils/image';
 import { Size } from '../types';
 import { X, Star, Heart, ShoppingBag, Truck, ShieldCheck, Zap, Ruler, Check } from 'lucide-react';
 
@@ -75,7 +76,7 @@ export const ProductDetailModal: React.FC = () => {
           <div className="md:col-span-6 space-y-4">
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800">
               <img
-                src={activeImage}
+                src={getImageUrl(activeImage)}
                 alt={displayName}
                 className="w-full h-full object-cover object-center"
               />
@@ -98,7 +99,7 @@ export const ProductDetailModal: React.FC = () => {
                       activeImage === img ? 'border-[#ff462e] scale-95' : 'border-zinc-800 opacity-60 hover:opacity-100'
                     }`}
                   >
-                    <img src={img} alt="Thumbnail" className="w-full h-full object-cover" />
+                    <img src={getImageUrl(img)} alt="Thumbnail" className="w-full h-full object-cover" />
                   </button>
                 ))}
               </div>

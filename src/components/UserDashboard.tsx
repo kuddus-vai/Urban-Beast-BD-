@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useShop } from '../context/ShopContext';
+import { getImageUrl } from '../utils/image';
 import { 
   Package, 
   Clock, 
@@ -227,7 +228,7 @@ export const UserDashboard: React.FC = () => {
                       <div key={idx} className="py-3 first:pt-0 last:pb-0 flex items-center justify-between gap-4">
                         <div className="flex items-center gap-3.5">
                           <img
-                            src={item.product.image}
+                            src={getImageUrl(item.product.image)}
                             alt=""
                             className="w-14 h-16 rounded-xl object-cover bg-zinc-900 border border-zinc-800"
                           />
@@ -291,7 +292,7 @@ export const UserDashboard: React.FC = () => {
                 const availSize = p.sizes.find(s => (p.sizeStock[s] || 0) > 0) || p.sizes[0];
                 return (
                   <div key={p.id} className="bg-[#131317] border border-zinc-800 rounded-2xl p-4 flex gap-4">
-                    <img src={p.image} alt="" className="w-20 h-24 rounded-xl object-cover bg-zinc-900 shrink-0" />
+                    <img src={getImageUrl(p.image)} alt="" className="w-20 h-24 rounded-xl object-cover bg-zinc-900 shrink-0" />
                     <div className="flex-1 flex flex-col justify-between">
                       <div>
                         <h4 className="font-bold text-xs sm:text-sm text-white line-clamp-1">{p.name}</h4>
